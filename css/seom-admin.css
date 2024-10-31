@@ -1,0 +1,256 @@
+#seo_manager-tab-menu {width:100%;}#seo_manager-tab-menu a {background: none repeat scroll 0 0 #DCA808; border: 0 none;color: #FFFFFF;display: inline-block;font-size: 16px;font-weight: bold;padding: 12px 20px;opacity:0.5;}#seo_manager-tab-menu a:hover{cursor:pointer;background: none repeat scroll 0 0 #DCA808;opacity:1;}#seo_manager-tab-menu a.active{ background: none repeat scroll 0 0 #DCA808;opacity:1;}#div-seo_manager-advance .form-field {padding-bottom: 10px;}#div-seo_manager-advance th{text-align:left;}#div-seo_manager-advance .form-field label {display: block;font-size: 14px;font-weight: 600;padding-bottom: 5px;}#div-seo_manager-advance .form-field input, #div-seo_manager-advance .form-field textarea {width: 50%;min-height: 40px;}#div-seo_manager-advance ol li {padding-bottom: 20px;border-bottom: 2px dashed #ccc;}
+.drop {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.drop.open {
+  z-index: 100;
+}
+.drop.open .drop-screen {
+  z-index: 100;
+  display: block;
+}
+.drop.open .drop-options {
+  z-index: 200;
+  max-height: 200px;
+}
+.drop.open .drop-display {
+  z-index: 200;
+  border-color: #333;
+}
+.drop select {
+  display: none;
+}
+.drop .drop-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  display: none;
+  z-index: 1;
+}
+
+.link {
+  text-align: center;
+  margin: 20px 0px;
+  color:#8CACD7;
+}
+
+
+.drop .drop-display {
+  position: relative;
+  padding: 0px 20px 5px 5px;
+  border: 1px solid #666;
+  width: 100%;
+  background: #FFF;
+  z-index: 1;
+  margin: 0px;
+  font-size: 14px;
+  min-height: 50px;
+}
+.drop .drop-display:hover:after {
+  opacity: 0.75;
+}
+
+.drop .drop-display::after {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABhElEQVRYhe2UPUvDQByHf//amMOpHQp+BIc6Fdz1C/hGdJQI7VDoR9BB/AaBDkVoxtqAL4Pd7OAq3Tr4EQSHdkuToOdgrgbpy12bTt6zJHf8yfPkAgE0Gs1/h8RNuVw+J6KdKIoums3mxypktm0XDMO4BvDaaDRuxgG1Ws0MgsCP1/0oivbSjojlXQBFADwMww3XdUcZAHAcJ+Cct+LZomEYXdu2CyuSg3Pecl13BAAZMUREZ0R0n4h4qVarmynJn4UcwBNjzB57k8OVSsUgolvO+WG89ZbNZnfr9fr7kvJtITdN89hxnGBiQJoRMvKJAWlEyMqnBiwToSKfGSAiALQBHMhE/JVzzjuMsaNp8rkBKhGLyKUCZCIWlUsHzIrwff9zUblSAABYlrWey+XaRLQfb/Xjq/jDPQ6HwxPP80LZZ2bmj/zieV5IRBaAh4RYyDuMsVMVOQCsqQwDQK/X+yqVSnf4OfKthFz62JMofYIklmWt5/P5SwAYDAZXqm+u0Wg0gm9Ald5ZLVOgvQAAAABJRU5ErkJggg==");
+    width: 32px;
+    height: 32px;
+    content: "";
+}
+.drop .drop-display .item {
+  position: relative;
+  display: inline-block;
+  border: 2px solid #eaeaea;
+  margin: 5px 5px -4px 0px;
+  padding: 0px 25px 0px 10px;
+  overflow: hidden;
+  height: 40px;
+  line-height: 36px;
+}
+.drop .drop-display .item .btnclose {
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+}
+.material-icons.btnclose::after {
+    content: "";
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABmJLR0QA/wD/AP+gvaeTAAABAElEQVQ4jc3TvUoDURAF4E+xSmG0NOkklipYG1PZB3wBK5/BZxGEjdb+tCpREDs7sVIJaGOjgj6Bxb2BNbm7G7DJgQs7c2bOPcydZdowU8J10EUrxi84w22qeDaRa+IaJ6jhMp5aFOqjUeWwiTccYj7B15HFmlKxmyhShQxXRWQHHwVOUs4+0R4m8jPqCnP5mUDoG6exB8zlyBYucvEy9kYEDjCI3w/YTjn6F/KOnrGWiwfYL+ldjz1j2BKGXZ/AwAK+sFlU0BeetgpH/s5zDA1h2bJ46ygWcYxXLOWJ1L/WQA8bwjo8xvwqdnCPXbxXCQ3RFvZkJcZPOMddSc8U4Rcz7SvihuVGmwAAAABJRU5ErkJggg==");
+    width: 18px;
+    height: 18px;
+    position: absolute;right: -22px;
+}
+.drop .drop-display .item .btnclose:hover {
+  opacity: 0.75;
+}
+.drop .drop-display .item.remove {
+  -webkit-animation: removeSelected 0.2s, hide 1s infinite;
+          animation: removeSelected 0.2s, hide 1s infinite;
+  -webkit-animation-delay: 0s, 0.2s;
+          animation-delay: 0s, 0.2s;
+}
+.drop .drop-display .item.add {
+  -webkit-animation: addSelected 0.2s;
+          animation: addSelected 0.2s;
+}
+.drop .drop-display .item.hide {
+  display: none;
+}
+.drop .drop-options {
+  background: #333;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  width: 100%;
+  max-height: 0px;
+  overflow-y: auto;
+  transition: all 0.25s linear;
+  z-index: 1;
+}
+.drop .drop-options a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 20px;
+  color: white;
+  position: relative;
+  max-height: 40px;
+  transition: all 1s;
+  overflow: hidden;border-bottom: 1px solid #fff;
+}
+.drop .drop-options a:hover {
+  background: #333;
+  cursor: pointer;
+}
+.drop .drop-options a.remove {
+  -webkit-animation: removeOption 0.2s;
+          animation: removeOption 0.2s;
+  max-height: 0px;
+}
+.drop .drop-options a.add {
+  -webkit-animation: addOption 0.2s;
+          animation: addOption 0.2s;
+}
+.drop .drop-options a.hide {
+  display: none;
+}
+
+@-webkit-keyframes pop {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes removeOption {
+  from {
+    max-height: 40px;
+  }
+  to {
+    max-height: 0px;
+  }
+}
+@keyframes removeOption {
+  from {
+    max-height: 40px;
+  }
+  to {
+    max-height: 0px;
+  }
+}
+@-webkit-keyframes addOption {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 40px;
+  }
+}
+@keyframes addOption {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 40px;
+  }
+}
+@-webkit-keyframes removeSelected {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+@keyframes removeSelected {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+@-webkit-keyframes addSelected {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes addSelected {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes hide {
+  from, to {
+    max-height: 0px;
+    max-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+  }
+}
+@keyframes hide {
+  from, to {
+    max-height: 0px;
+    max-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+  }
+}
